@@ -9,9 +9,37 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+      Size size = MediaQuery.of(context).size;
+    return Background(
       child: Column(
-        children: [
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+           SizedBox(height: size.height * 0.01),
+        SizedBox(
+          width: 350,
+          child: TextField(
+              decoration: InputDecoration(
+                  hintText: 'e-mail',
+                  filled: true,
+                  fillColor: Colors.white,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                    borderSide: BorderSide(color: Colors.grey[300], width: 2),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    borderSide: BorderSide(color: Colors.blue[300]),
+                  ),
+                  hintStyle: TextStyle(fontFamily: 'Futura')),
+              onChanged: (value) {}),
+        ),
+          Text(
+            'AJ Laundary',
+            style: TextStyle(
+              fontSize: 30.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           SizedBox(height: 40.0),
           _buildTextField(
               hint: 'Username',
@@ -25,25 +53,26 @@ class Body extends StatelessWidget {
           SizedBox(height: 15.0),
           _buildTextField(
               hint: 'Password',
-              isObsecure: !_state.showPass, 
+              //isObsecure: !_state.showPass,
               icon: Icons.lock,
-              button: IconButton(
+              /*button: IconButton(
                   icon: Icon(_state.showPass
                       ? Icons.visibility
                       : Icons.visibility_off),
-                  onPressed: () => _state.showPass = !_state.showPass),
+                  onPressed: () => _state.showPass = !_state.showPass),*/
               onChanged: (value) => _state.password = value),
           SizedBox(height: 15.0),
           _buildTextField(
               hint: 'Confirm Password',
-              isObsecure: !_state.confirmPass,
+              //isObsecure: !_state.confirmPass,
               icon: Icons.lock,
-              button: IconButton(
-                  icon: Icon(_state.confirmPass
+              /* button: IconButton(
+                 icon: Icon(_state.confirmPass
                       ? Icons.visibility
                       : Icons.visibility_off),
-                  onPressed: () =>
-                      _state.confirmShowPass= !_state.confirmShowPass),
+                  onPressed: () => {},
+                     // _state.confirmShowPass= !_state.confirmShowPass
+                     ),*/
               onChanged: (value) => _state.confirmPass = value),
         ],
       ),
@@ -54,12 +83,8 @@ class Body extends StatelessWidget {
 TextFormField _buildTextField(
     {hint, icon, isObsecure = false, button, onChanged}) {
   return TextFormField(
-    keyboardType: TextInputType.text,
-    autofocus: false,
     decoration: InputDecoration(
       hintText: hint,
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       prefixIcon: icon != null ? Icon(icon) : null,
       suffixIcon: button,
     ),
