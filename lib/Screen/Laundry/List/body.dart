@@ -7,5 +7,43 @@ class Body extends StatelessWidget {
   final ListScreenState _state;
 
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return Card(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'Title',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text('subtitle'),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'Title',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text('subtitle'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 }
