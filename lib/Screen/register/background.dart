@@ -9,7 +9,7 @@ class Background extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     double height = size.height.toDouble();
-    double fieldForm = (height / 2.0) - 20;
+    double fieldForm = height;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
@@ -21,27 +21,30 @@ class Background extends StatelessWidget {
               alignment: Alignment.center,
               children: <Widget>[
                 Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.max,
-                    children: <Widget>[
-                      SvgPicture.asset(
-                        'assets/icons/top-deco.svg',
-                        width: size.width,
-                      ),
-                      SvgPicture.asset(
-                        'assets/icons/Bottom-deco.svg',
-                        width: size.width,
-                      ),
-                    ]),
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      'assets/icons/top-deco.svg',
+                      width: size.width,
+                    ),
+                    SvgPicture.asset(
+                      'assets/icons/Bottom-deco.svg',
+                      width: size.width,
+                    ),
+                  ],
+                ),
                 Positioned(top: 250, child: child),
-                Positioned(top: 150, left: 22, child: Text(
-                  'Register',
-                  style:TextStyle(
-                    fontFamily: 'futura',
-                    fontSize: 40,
-                    color: Color(0xFF4BAFBE)
-                  )
-                ))
+                Positioned(
+                    top: 150,
+                    left: 22,
+                    child: Text(
+                      'Register',
+                      style: TextStyle(
+                          fontFamily: 'Futura',
+                          fontSize: 40,
+                          color: Color(0xFF4BAFBE)),
+                    )),
               ],
             )),
       ),
