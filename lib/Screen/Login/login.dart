@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'body.dart';
 
 class LoginScreen extends StatefulWidget {
   static Route route() =>
       MaterialPageRoute(builder: (context) => LoginScreen());
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  LoginScreenState createState() => LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: null,
-    );
+    return SafeArea(
+        child: Scaffold(
+      body: Body(
+        state: this,
+      ),
+    ));
   }
 }

@@ -7,8 +7,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'AJAIB_BOY',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue[300]),
-      initialRoute: '/',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      initialRoute: '/login',
       onGenerateRoute: generateRoute,
     );
   }
