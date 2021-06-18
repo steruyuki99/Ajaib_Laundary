@@ -34,6 +34,7 @@ class Body extends StatelessWidget {
             width: 350,
             child: _buildTextField(
                 hint: 'password',
+                isObsecure: true,
                 icon: Icons.lock,
                 onChanged: (value) => _state.password = value),
           ),
@@ -42,6 +43,7 @@ class Body extends StatelessWidget {
             width: 350,
              child: _buildTextField(
                 hint: 'Confirm Password',
+                isObsecure: true,
                 icon: Icons.lock,
                 onChanged: (value) => _state.confirmPass = value),
           ),
