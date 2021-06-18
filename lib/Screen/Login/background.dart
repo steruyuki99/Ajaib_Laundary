@@ -12,29 +12,29 @@ class Background extends StatelessWidget {
     double fieldForm = (height / 2.0) - 20;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
-        width: size.width,
-        height: size.height,
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Container(
+            width: size.width,
+            height: size.height,
             child: Stack(
-          alignment: AlignmentDirectional.center,
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              alignment: AlignmentDirectional.center,
               children: <Widget>[
-                SvgPicture.asset(
-                  'assets/icons/logo-deco.svg',
-                  width: size.width,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      'assets/icons/logo-deco.svg',
+                      width: size.width,
+                    ),
+                    SvgPicture.asset(
+                      'assets/icons/Bottom-deco.svg',
+                      width: size.width,
+                    ),
+                  ],
                 ),
-                SvgPicture.asset(
-                  'assets/icons/Bottom-deco.svg',
-                  width: size.width,
-                ),
+                Positioned(top: fieldForm, child: child)
               ],
-            ),
-            Positioned(top: fieldForm, child: child)
-          ],
-        )),
+            )),
       ),
     );
   }

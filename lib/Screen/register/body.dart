@@ -1,5 +1,5 @@
 //import 'package:ajaib_laundary/Screen/register/register.dart';
-
+import 'background.dart';
 import 'register.dart';
 import 'package:flutter/material.dart';
 
