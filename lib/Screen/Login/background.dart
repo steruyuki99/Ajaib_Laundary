@@ -17,10 +17,12 @@ class Background extends StatelessWidget {
             width: size.width,
             height: size.height,
             child: Stack(
-              alignment: AlignmentDirectional.center,
+              clipBehavior: Clip.hardEdge,
+              alignment: Alignment.center,
               children: <Widget>[
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
                   children: <Widget>[
                     SvgPicture.asset(
                       'assets/icons/logo-deco.svg',
