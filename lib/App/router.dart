@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ajaib_laundary/Screen/Login/login.dart';
 import 'package:ajaib_laundary/main/mainScreen.dart';
+import 'package:ajaib_laundary/Screen/Laundry/List/list.dart';
 
 Route<dynamic> generateRoute(settings) {
   switch (settings.name) {
@@ -11,6 +12,9 @@ Route<dynamic> generateRoute(settings) {
 
     case '/login':
       return LoginScreen.route();
+
+    case '/laundry':
+      if (settings.name == '/laundry/list') return ListScreen.route();
   }
   return null;
 }
