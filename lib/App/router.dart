@@ -1,4 +1,5 @@
 import 'package:ajaib_laundary/Screen/Laundry/List/list.dart';
+import 'package:ajaib_laundary/Screen/register/register.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ajaib_laundary/Screen/Login/login.dart';
@@ -17,6 +18,8 @@ Route<dynamic> generateRoute(settings) {
     case '/list':
       return ListScreen.route();
 
+    case '/register':
+      return RegisterScreen.route();
   }
   return null;
 }

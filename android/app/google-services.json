@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "612284790520",
-    "project_id": "ajaib-laundary",
-    "storage_bucket": "ajaib-laundary.appspot.com"
+    "project_number": "1084739204554",
+    "project_id": "alaundary",
+    "storage_bucket": "alaundary.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:612284790520:android:898b54bda4c1a6b5d7ad0d",
+        "mobilesdk_app_id": "1:1084739204554:android:c58979f5a8efc0732f4b33",
         "android_client_info": {
           "package_name": "com.example.ajaib_laundary"
         }
       },
       "oauth_client": [
         {
-          "client_id": "612284790520-j0b0llo7j8qb4agukoshn2v9n69unmon.apps.googleusercontent.com",
+          "client_id": "1084739204554-09s289oead5nqshkbvc3dnaddf079q7p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDy6wm72iq2IpVD1iEXWCwROK3XV7JIlcA"
+          "current_key": "AIzaSyD2uQa9XV6AD18EqYkhFoS8DflGwilBjJk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "612284790520-j0b0llo7j8qb4agukoshn2v9n69unmon.apps.googleusercontent.com",
+              "client_id": "1084739204554-09s289oead5nqshkbvc3dnaddf079q7p.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

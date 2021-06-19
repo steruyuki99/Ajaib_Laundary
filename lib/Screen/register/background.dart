@@ -9,7 +9,6 @@ class Background extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     double height = size.height.toDouble();
-    double fieldForm = height;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
@@ -36,7 +35,7 @@ class Background extends StatelessWidget {
                 ),
                 Positioned(top: 250, child: child),
                 Positioned(
-                    top: 150,
+                    top: 180,
                     left: 22,
                     child: Text(
                       'Register',
