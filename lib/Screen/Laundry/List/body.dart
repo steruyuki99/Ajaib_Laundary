@@ -1,14 +1,15 @@
-
 import 'package:ajaib_laundary/Screen/Laundry/list/list.dart';
+import 'package:ajaib_laundary/main/mainScreen.dart';
+import 'package:ajaib_laundary/services/auth.dart';
+import 'package:provider/provider.dart';
 //import 'package:ajaib_laundary/Screen/Laundry/list/background.dart';
 import 'dart:convert';
 
-import 'list.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
-  const Body({state});
-
+  const Body({state}) : _state = state;
+  final ListScreenState _state;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +20,18 @@ class Body extends StatelessWidget {
             child: ListView(
           children: [
             ListTile(title: Text('TBD'), onTap: () {}),
-            ListTile(title: Text('TBD'), onTap: () {})
+            ListTile(
+                title: Text('logout'),
+                onTap: () {
+                  context.read<AuthServices>().signOut();
+                  Navigator.pushAndRemoveUntil<void>(
+                    context,
+                    MaterialPageRoute<void>(
+                        builder: (BuildContext context) => MainScreen()),
+                    ModalRoute.withName('/'),
+                  );
+                  ;
+                })
           ],
         )),
         body: Center(
@@ -69,6 +81,5 @@ class Body extends StatelessWidget {
             },
           ),
         ));
-
   }
 }
