@@ -10,7 +10,7 @@ class RegisterScreen extends StatefulWidget {
 
 class RegisterScreenState extends State<RegisterScreen> {
   String _username, _email, _password, _confirmPass;
-  bool _showPass = false, _confirmShowPass = false, _showMessage = true;
+  bool _showPass = true, _confirmShowPass=true;
 
   get username => _username;
   set username(value) => setState(() => _username = value);
@@ -19,7 +19,7 @@ class RegisterScreenState extends State<RegisterScreen> {
   set password(value) => setState(() => _password = value);
 
   get confirmPass => _confirmPass;
-  set confirmPass(value) => setState(() => _confirmPass = value);
+  set confirmPass(value) => setState(() => _confirmPass = value); 
 
   get email => _email;
   set email(value) => setState(() => _email = value);
@@ -30,11 +30,15 @@ class RegisterScreenState extends State<RegisterScreen> {
   get confirmShowPass => _confirmShowPass;
   set confirmShowPass(value) => setState(() => _confirmShowPass = value);
 
-  get showMessage => _showMessage;
-  set showMessage(value) => setState(() => _showMessage = value);
+    @override
+  void initState() {
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
         child: Scaffold(
       body: Body(

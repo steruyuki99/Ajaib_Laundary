@@ -1,6 +1,5 @@
 import 'package:ajaib_laundary/Screen/register/background.dart';
-import 'package:ajaib_laundary/services/auth.dart';
-import 'package:provider/provider.dart';
+
 import 'register.dart';
 import 'package:flutter/material.dart';
 
@@ -37,34 +36,29 @@ class Body extends StatelessWidget {
                 hint: 'password',
                 isObsecure: _state.showPass,
                 icon: Icons.lock,
-                button: IconButton(
-                    icon: Icon(_state.showPass
-                        ? Icons.visibility
-                        : Icons.visibility_off),
-                    onPressed: () => _state.showPass = !_state.showPass),
+                 button: IconButton(
+                icon: Icon(_state.showPass
+                    ? Icons.visibility
+                    : Icons.visibility_off),
+                onPressed: () =>
+                    _state.showPass = !_state.showPass),
                 onChanged: (value) => _state.password = value),
           ),
           SizedBox(height: size.height * 0.01),
           SizedBox(
             width: 350,
-            child: _buildTextField(
+             child: _buildTextField(
                 hint: 'Confirm Password',
                 isObsecure: _state.confirmShowPass,
                 icon: Icons.lock,
-                button: IconButton(
-                    icon: Icon(_state.confirmShowPass
-                        ? Icons.visibility
-                        : Icons.visibility_off),
-                    onPressed: () =>
-                        _state.confirmShowPass = !_state.confirmShowPass),
+                 button: IconButton(
+                icon: Icon(_state.confirmShowPass
+                    ? Icons.visibility
+                    : Icons.visibility_off),
+                onPressed: () =>
+                    _state.confirmShowPass = !_state.confirmShowPass),
                 onChanged: (value) => _state.confirmPass = value),
           ),
-          SizedBox(height: size.height * 0.04),
-          _state.showMessage
-              ? SizedBox(height: 10.0)
-              : Center(
-                  child: CircularProgressIndicator(),
-                ),
           SizedBox(height: size.height * 0.04),
           Container(
             decoration: BoxDecoration(
@@ -79,41 +73,9 @@ class Body extends StatelessWidget {
                     fontSize: 20,
                     color: Color(0xFF4BAFBE)),
               ),
-              onPressed: () {
-                context.read<AuthServices>().signUp(
-                            email: _state.email,
-                            password: _state.password,
-                            name: _state.username) ==
-                        null
-                    ? Navigator.pushNamed(context, '/list')
-                    : _state.showMessage = false;
-              },
+              onPressed: () {},
             ),
           ),
-          Row(
-            children: <Widget>[
-              Text(
-                'Already have an account? ',
-                style: TextStyle(
-                    fontFamily: 'Futura',
-                    fontSize: 15,
-                    color: Color(0xFF4BAFBE)),
-              ),
-              TextButton(
-                child: Text(
-                  'Login now',
-                  style: TextStyle(
-                      fontFamily: 'Futura',
-                      fontSize: 15,
-                      color: Color(0xFF4BAFBE),
-                      decoration: TextDecoration.underline),
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          )
         ],
       ),
     );

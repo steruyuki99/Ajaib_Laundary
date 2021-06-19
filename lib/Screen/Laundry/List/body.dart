@@ -1,8 +1,5 @@
+
 import 'package:ajaib_laundary/Screen/Laundry/list/list.dart';
-import 'package:ajaib_laundary/Screen/Login/login.dart';
-import 'package:ajaib_laundary/main/mainScreen.dart';
-import 'package:ajaib_laundary/services/auth.dart';
-import 'package:provider/provider.dart';
 //import 'package:ajaib_laundary/Screen/Laundry/list/background.dart';
 import 'dart:convert';
 
@@ -22,18 +19,7 @@ class Body extends StatelessWidget {
             child: ListView(
           children: [
             ListTile(title: Text('TBD'), onTap: () {}),
-            ListTile(
-                title: Text('logout'),
-                onTap: () {
-                  context.read<AuthServices>().signOut();
-                  Navigator.pushAndRemoveUntil<void>(
-                    context,
-                    MaterialPageRoute<void>(
-                        builder: (BuildContext context) => MainScreen()),
-                    ModalRoute.withName('/'),
-                  );
-                  ;
-                })
+            ListTile(title: Text('TBD'), onTap: () {})
           ],
         )),
         body: Center(
@@ -83,5 +69,6 @@ class Body extends StatelessWidget {
             },
           ),
         ));
+
   }
 }
