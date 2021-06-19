@@ -1,5 +1,6 @@
 import 'package:ajaib_laundary/Screen/register/background.dart';
-
+import 'package:ajaib_laundary/services/auth.dart';
+import 'package:provider/provider.dart';
 import 'register.dart';
 import 'package:flutter/material.dart';
 
@@ -13,118 +14,57 @@ class Body extends StatelessWidget {
     return Background(
       child: Column(
         children: [
-          // SizedBox(height: 40.0),
-          // _buildTextField(
-          //     hint: 'Username',
-          //     icon: Icons.people,
-          //     onChanged: (value) => _state.username = value),
-          // SizedBox(height: 15.0),
-          // _buildTextField(
-          //     hint: 'Email',
-          //     icon: Icons.email_outlined,
-          //     onChanged: (value) => _state.email = value),
-          // SizedBox(height: 15.0),
-          // _buildTextField(
-          //     hint: 'Password',
-          //     isObsecure: !_state.showPass,
-          //     icon: Icons.lock,
-          //     button: IconButton(
-          //         icon: Icon(_state.showPass
-          //             ? Icons.visibility
-          //             : Icons.visibility_off),
-          //         onPressed: () => _state.showPass = !_state.showPass),
-          //     onChanged: (value) => _state.password = value),
-          // SizedBox(height: 15.0),
-          // _buildTextField(
-          //     hint: 'Confirm Password',
-          //     isObsecure: !_state.confirmPass,
-          //     icon: Icons.lock,
-          //     button: IconButton(
-          //         icon: Icon(_state.confirmPass
-          //             ? Icons.visibility
-          //             : Icons.visibility_off),
-          //         onPressed: () =>
-          //             _state.confirmShowPass = !_state.confirmShowPass),
-          //     onChanged: (value) => _state.confirmPass = value),
           SizedBox(height: size.height * 0.01),
           SizedBox(
             width: 350,
-            child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'username',
-                  filled: true,
-                  fillColor: Colors.white,
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                    borderSide: BorderSide(color: Colors.grey[300], width: 2),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(color: Colors.blue[300]),
-                  ),
-                  hintStyle: TextStyle(fontFamily: 'Futura'),
+            child: _buildTextField(
+                hint: 'username',
+                icon: Icons.people,
+                onChanged: (value) => _state.username = value),
+          ),
+          SizedBox(height: size.height * 0.01),
+          SizedBox(
+            width: 350,
+            child: _buildTextField(
+                hint: 'email',
+                icon: Icons.email_outlined,
+                onChanged: (value) => _state.email = value),
+          ),
+          SizedBox(height: size.height * 0.01),
+          SizedBox(
+            width: 350,
+            child: _buildTextField(
+                hint: 'password',
+                isObsecure: _state.showPass,
+                icon: Icons.lock,
+                button: IconButton(
+                    icon: Icon(_state.showPass
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () => _state.showPass = !_state.showPass),
+                onChanged: (value) => _state.password = value),
+          ),
+          SizedBox(height: size.height * 0.01),
+          SizedBox(
+            width: 350,
+            child: _buildTextField(
+                hint: 'Confirm Password',
+                isObsecure: _state.confirmShowPass,
+                icon: Icons.lock,
+                button: IconButton(
+                    icon: Icon(_state.confirmShowPass
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () =>
+                        _state.confirmShowPass = !_state.confirmShowPass),
+                onChanged: (value) => _state.confirmPass = value),
+          ),
+          SizedBox(height: size.height * 0.04),
+          _state.showMessage
+              ? SizedBox(height: 10.0)
+              : Center(
+                  child: CircularProgressIndicator(),
                 ),
-                onChanged: (value) {}),
-          ),
-          SizedBox(height: size.height * 0.01),
-          SizedBox(
-            width: 350,
-            child: TextField(
-                decoration: InputDecoration(
-                    hintText: 'e-mail',
-                    filled: true,
-                    fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                      borderSide: BorderSide(color: Colors.grey[300], width: 2),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      borderSide: BorderSide(color: Colors.blue[300]),
-                    ),
-                    hintStyle: TextStyle(fontFamily: 'Futura')),
-                onChanged: (value) {}),
-          ),
-          SizedBox(height: size.height * 0.01),
-          SizedBox(
-            width: 350,
-            child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'password',
-                  filled: true,
-                  fillColor: Colors.white,
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                    borderSide: BorderSide(color: Colors.grey[300], width: 2),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(color: Colors.blue[300]),
-                  ),
-                  hintStyle: TextStyle(fontFamily: 'Futura'),
-                ),
-                onChanged: (value) {}),
-          ),
-          SizedBox(height: size.height * 0.01),
-          SizedBox(
-            width: 350,
-            child: TextField(
-                decoration: InputDecoration(
-                  hintText: ' Confirm Password',
-                  filled: true,
-                  fillColor: Colors.white,
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                    borderSide: BorderSide(color: Colors.grey[300], width: 2),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(color: Colors.blue[300]),
-                  ),
-                  hintStyle: TextStyle(fontFamily: 'Futura'),
-                ),
-                onChanged: (value) {}),
-          ),
           SizedBox(height: size.height * 0.04),
           Container(
             decoration: BoxDecoration(
@@ -139,9 +79,41 @@ class Body extends StatelessWidget {
                     fontSize: 20,
                     color: Color(0xFF4BAFBE)),
               ),
-              onPressed: () {},
+              onPressed: () {
+                context.read<AuthServices>().signUp(
+                            email: _state.email,
+                            password: _state.password,
+                            name: _state.username) ==
+                        null
+                    ? Navigator.pushNamed(context, '/list')
+                    : _state.showMessage = false;
+              },
             ),
           ),
+          Row(
+            children: <Widget>[
+              Text(
+                'Already have an account? ',
+                style: TextStyle(
+                    fontFamily: 'Futura',
+                    fontSize: 15,
+                    color: Color(0xFF4BAFBE)),
+              ),
+              TextButton(
+                child: Text(
+                  'Login now',
+                  style: TextStyle(
+                      fontFamily: 'Futura',
+                      fontSize: 15,
+                      color: Color(0xFF4BAFBE),
+                      decoration: TextDecoration.underline),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          )
         ],
       ),
     );
