@@ -8,8 +8,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
-  const Body({state}) : _state = state;
-  final ListScreenState _state;
+  // const Body({state}) : _state = state;
+  // final ListScreenState _state;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

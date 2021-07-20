@@ -13,7 +13,7 @@ class ListScreenState extends State<ListScreen> {
     return SafeArea(
         child: Scaffold(
       body: Body(
-        state: this,
+        // state: this,
       ),
     ));
   }
